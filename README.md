@@ -1,0 +1,3 @@
+# TipCalculator
+
+![Screenshot](screenshot.png)
