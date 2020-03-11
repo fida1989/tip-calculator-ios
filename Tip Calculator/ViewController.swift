@@ -23,16 +23,23 @@ class ViewController: UIViewController {
     
     @IBAction func myButtonTapped(_ sender: Any) {
         
-        let bill = Float(myBill.text!)!
-        let tip = bill * (Float(myTip.text!)! / 100.0)
         
-        if(tip >= 50.0){
-            myValue.text = String("Tip:  \(tip)! 🤑")
-        } else if (tip == 0.0){
-            myValue.text = String("Tip:  \(tip). 🥺")
-        } else {
-            myValue.text = String("Tip:  \(tip). 😊")
+        if(Float(myBill.text!) != nil && Float(myTip.text!) != nil){
+            let bill = Float(myBill.text!)!
+            let tip = bill * (Float(myTip.text!)! / 100.0)
+            
+            if(tip >= 50.0){
+                myValue.text = String("Tip:  \(tip)! 🤑")
+            } else if (tip == 0.0){
+                myValue.text = String("Tip:  \(tip). 🥺")
+            } else {
+                myValue.text = String("Tip:  \(tip). 😊")
+            }
+        }else{
+            print("null found")
         }
+        
+        
     }
     
 }
